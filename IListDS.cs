@@ -4,9 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C_Sharp.数据结构
+namespace C_Sharp.DataStructure
 {
-    class IListDS
+    interface IListDS<T>
     {
+        int GetLength();
+        void Clear();
+        bool IsEmpty();
+        void Append(T item);
+        void Insert(T item, int i);
+        T Delete(int i);
+        T GetElem(int i);           //取表元
+        int Locate(T value);        //按值查找
+
     }
 }
