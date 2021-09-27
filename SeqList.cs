@@ -122,34 +122,34 @@ namespace C_Sharp.DataStructure
 
         public T Delete(int i)
         {
-            T temp = default(T);
+            T tempVal = default(T);
             if (IsEmpty())
             {
                 Console.WriteLine("List is empty  顺序表是空的，删你马呢");
-                return temp;
+                return tempVal;
             }
 
             if (i < 1 || i > last + 1)//i-1<0 || i-1>last
             {
                 Console.WriteLine("Position is Error  索引值溢出");
-                return temp;
+                return tempVal;
             }
 
             if (i - 1 == last)
             {
-                temp = data[last--];
+                tempVal = data[last--];
             }
             else
             {
-                temp = data[i - 1];
+                tempVal = data[i - 1];
                 for (int j = i; j <= last; ++j)
                 {
-                    data[j-1] = data[j];        //《c#数据结构预算法》中出现错误
+                    data[j - 1] = data[j];        //《c#数据结构预算法》中出现错误
                 }
             }
 
             --last;
-            return temp;
+            return tempVal;
         }
 
 
@@ -187,5 +187,28 @@ namespace C_Sharp.DataStructure
             }
             return i;
         }
+
+        public void Reverse()
+        {
+            //顺序表倒置算法
+            //算法思路： 第i个元素与第n-i个元素交换 0<=i<=n/2
+            //时间复杂度: 0(n)
+            T tempVal = default(T);
+            int len = GetLength();
+            for (int i = 0; i <= len / 2; ++i)
+            {
+                tempVal = data[i];
+                data[i] = data[len - i];
+                data[len - i] = tempVal;
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }

@@ -16,6 +16,6 @@ namespace C_Sharp.DataStructure
         T Delete(int i);
         T GetElem(int i);           //取表元
         int Locate(T value);        //按值查找
-
+        void Reverse();             //倒置
     }
 }
