@@ -144,7 +144,7 @@ namespace C_Sharp.DataStructure
                 temp = data[i - 1];
                 for (int j = i; j <= last; ++j)
                 {
-                    data[j] = data[j + 1];
+                    data[j-1] = data[j];        //《c#数据结构预算法》中出现错误
                 }
             }
 
@@ -167,7 +167,25 @@ namespace C_Sharp.DataStructure
         //在顺序白哦中查找值为value的数据元素
         public int Locate(T value)
         {
-            throw new NotImplementedException();
+            if (IsEmpty())
+            {
+                Console.WriteLine("List is empty!");
+                return -1;
+            }
+
+            int i = 0;
+            for (i = 0; i < last; ++i)
+            {
+                if (value.Equals(data[i]))
+                {
+                    break;
+                }
+            }
+            if (i > last)
+            {
+                return -1;
+            }
+            return i;
         }
     }
 }
