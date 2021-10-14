@@ -8,6 +8,9 @@ namespace C_Sharp.DataStructure
 {
     class SeqListAlgorithm
     {
+
+        //升序排列的整型顺序表La和Lb  合并成升序表Lc
+        //算法的时间复杂度是0（m+n），m是La的表长，n是Lb的表长
         public SeqList<int> Merge(SeqList<int> La, SeqList<int> Lb)
         {
             SeqList<int> Lc = new SeqList<int>(La.Maxsize + Lb.Maxsize);
