@@ -10,7 +10,7 @@ namespace C_Sharp.DataStructure
     {
 
         //升序排列的整型顺序表La和Lb  合并成升序表Lc
-        //算法的时间复杂度是0（m+n），m是La的表长，n是Lb的表长
+        //算法的时间复杂度是0(m+n)，m是La的表长，n是Lb的表长
         public SeqList<int> Merge(SeqList<int> La, SeqList<int> Lb)
         {
             SeqList<int> Lc = new SeqList<int>(La.Maxsize + Lb.Maxsize);
@@ -51,6 +51,7 @@ namespace C_Sharp.DataStructure
 
         //已知一个存储整数的顺序表La，是构造顺序表Lb，要求顺序表Lb中只包含顺序表La中所有值不相同的数据元素
         //即：从表中删除相同数据
+        //算法的时间复杂度是 0(m+n),m是La的表长，n是Lb的表长
         public SeqList<int> Purge(SeqList<int> La)
         {
             SeqList<int> Lb = new SeqList<int>(La.Maxsize);
@@ -69,7 +70,7 @@ namespace C_Sharp.DataStructure
                     //有相同的数据元素
                     if (La[i].CompareTo(Lb[j]) == 0)
                     {
-                        break;
+                        break;//比如La[1] = 99 依次和Lb中的数据比较，若是Lb中有个99,那么直接跳出，换La[2]来和Lb中数据比较
                     }
                 }
 
@@ -82,6 +83,8 @@ namespace C_Sharp.DataStructure
 
             return Lb;
         }
+
+
 
 
 
