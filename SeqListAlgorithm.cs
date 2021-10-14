@@ -47,5 +47,43 @@ namespace C_Sharp.DataStructure
 
         }
 
+
+
+        //已知一个存储整数的顺序表La，是构造顺序表Lb，要求顺序表Lb中只包含顺序表La中所有值不相同的数据元素
+        public SeqList<int> Purge(SeqList<int> La)
+        {
+            SeqList<int> Lb = new SeqList<int>(La.Maxsize);
+
+            //将a表中的第1个数据元素赋给b表
+            Lb.Append(La[0]);
+
+            //依次处理a表中的数据元素
+            for (int i = 1; i <= La.GetLength() - 1; ++i)
+            {
+                int j = 0;
+
+                //查看b表中有无与a表相同的数据元素
+                for (j = 0; j <= Lb.GetLength() - 1; ++j)
+                {
+                    //有相同的数据元素
+                    if (La[i].CompareTo(Lb[j]) == 0)
+                    {
+                        break;
+                    }
+                }
+
+                //没有相同的数据元素，将a表中的数据元素附加到b表的末尾
+                if (j > Lb.GetLength() - 1)
+                {
+                    Lb.Append(La[i]);
+                }
+            }
+
+            return Lb;
+        }
+
+
+
+
     }
 }
