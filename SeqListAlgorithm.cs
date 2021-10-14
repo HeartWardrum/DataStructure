@@ -50,6 +50,7 @@ namespace C_Sharp.DataStructure
 
 
         //已知一个存储整数的顺序表La，是构造顺序表Lb，要求顺序表Lb中只包含顺序表La中所有值不相同的数据元素
+        //即：从表中删除相同数据
         public SeqList<int> Purge(SeqList<int> La)
         {
             SeqList<int> Lb = new SeqList<int>(La.Maxsize);
